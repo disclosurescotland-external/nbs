@@ -1,0 +1,8 @@
+{
+  "serviceName": "National Barring Service",
+  "plugins": {
+    "govuk-frontend": {
+      "rebrand": true
+    }
+  }
+}
