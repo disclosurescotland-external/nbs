@@ -1,0 +1,159 @@
+<!-- {#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+
+
+
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{% block header %}
+
+    {{ govukHeader() }}
+    {{ govukServiceNavigation({
+        serviceName: serviceName
+    })}}
+
+{% endblock %} -->
+
+
+{% extends "sg-prototype-templates/layouts/_base-layout--navigation.njk" %}
+
+{% block pageTitle %}
+	{% if pageName %}{{ pageName }} - {% endif %}Disclosure Scotland {{ serviceName }}
+{% endblock %}
+
+
+
+
+
+{% block siteBrandingLogo %}
+{# Combine the site title with the branding logo as we don't have a proper service name #}
+	<a class="ds_site-branding__logo ds_site-branding__link" href="{{currentPrototype}}{{homeLink}}">
+		<img class="ds_site-branding__logo-image" src="/public/images/ds-logo.svg" alt="Disclosure Scotland" />
+		<div class="ds_site-branding__title">
+			{{ serviceName }}
+		</div>
+	</a>
+	
+
+	
+{% endblock %}
+
+
+{# Use an empty siteBrandingTitle block as we've moved the title into the logo #}
+{% block siteBrandingTitle %}
+
+
+{% endblock %}
+
+
+
+
+
+
+
+{# Pull in the navigation menu set in routes #}
+
+{% set menuItems = [] %}
+{% for i in siteNav %}
+	{% set menuItems = menuItems | push ({
+		'label': i.name,
+		'link': (currentPrototype+i.link) if i.link else '#0',
+		'current': true if i.link == navActive+'/'
+	}) %}
+{% endfor %}
+
+{# Push that to the SG plugin menu #}
+{% set navigationMenu = {"menu": menuItems} %}
+
+{# Add the sign out link if sidenin is true #}
+{% block siteSearch %}
+	{% if signedin == true %}
+		<div class="ds_site-search ds_site-header__search" data-module="ds-site-search" style="grid-area: auto;">
+			<a href="/" class="ds_site-navigation__link">
+				Sign out
+			</a>
+		</div>
+	{% endif %}
+{% endblock %}
+
+
+{# Setup the main wrapper, use article as the default layout #}
+{% block main %}
+	<div class="ds_wrapper {{ containerClasses }}">
+		{% block beforeContent %}{% endblock %}
+		<main class="ds_layout {{ mainClasses | default('ds_layout--article') }}" id="main-content" role="main" {% if mainLang %} lang="{{ mainLang }}" {% endif %}>
+			{% block content %}{% endblock %}
+		</main>
+	</div>
+{% endblock %}
+
+
+{# Copy the siteFooter block so we can add in the footerLinks and view on render #}
+{% block siteFooter %}
+	<div class="ds_page__bottom">
+		<footer class="ds_site-footer">
+			<div class="ds_wrapper">
+				<div class="ds_site-footer__content">
+					<ul class="ds_site-footer__site-items">
+						<span class="footerLinks">
+							{% block footerLinks %}
+							{% endblock %}
+						</span>
+						{% if (GOVUKPrototypeKit.isDevelopment) %}
+						<li class="ds_site-items__item">
+							<a href="/manage-prototype">Manage your prototype</a>
+						</li>
+						<li class="ds_site-items__item">
+							<a href="https://online-accounts-prototypes.onrender.com{{currentURL}}">View page on Render</a>
+						</li>
+						{% endif %}
+						<li class="ds_site-items__item">
+							<a href="/manage-prototype/clear-data">Clear data</a>
+						</li>
+					</ul>
+					<div class="ds_site-footer__copyright">
+						<a class="ds_site-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">
+							<img loading="lazy" width="300" height="121" src="{{ assetPathTemplates }}/images/site-furniture/logos/ogl.svg" alt="Open Government License" />
+						</a>
+						<p>All content is available under the
+							<a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>, except for graphic assets and where otherwise stated
+						</p>
+						<p>&copy; Crown Copyright</p>
+					</div>
+					<div class="ds_site-footer__org">
+						<a class="ds_site-footer__org-link" title="The Scottish Government" href="https://www.gov.scot/">
+							<img loading="lazy" width="300" height="57" class="ds_site-footer__org-logo" src="{{ assetPathTemplates }}/images/site-furniture/logos/scottish-government--min.svg" alt="gov.scot" />
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+{% endblock %}
+
+
+{# Copy the bodyEnd block so we can add our own script calls in #}
+{% block bodyEnd %}
+	{# Add the autocomplete js #}
+	<script src="/public/javascripts/accessible-autocomplete.min.js"></script>
+
+	{% for scriptConfig in pluginConfig.scripts %}
+	{% if scriptConfig.src === '/plugin-assets/%40scottish-government-design-system%2Fprototype-templates/src/scripts/designsystem-templates.js' %}
+			{# Skip script from this plugin as it will be included at the end #}
+	{% else %}
+		{% if scriptConfig.type|length %}
+			<script type="{{scriptConfig.type}}" src="{{scriptConfig.src}}"></script>
+		{% else %}
+			<script src="{{scriptConfig.src}}"></script>
+		{% endif %}
+	{% endif %}
+	{% endfor %}
+
+	{# Load script from this plugin last which initialises window.DS #}
+	<script src="{{ assetPathTemplates }}/scripts/designsystem-templates.js"></script>
+{% endblock %}
