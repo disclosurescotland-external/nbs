@@ -23,7 +23,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 // Apply settings across this whole prototype
 router.get('*', function(req, res, next){
     // Set the service name
-    res.locals['serviceName'] = 'Applicant account'
+    res.locals['serviceName'] = 'Consider List Appeal'
 
 
 

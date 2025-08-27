@@ -8,3 +8,7 @@ const addFilter = govukPrototypeKit.views.addFilter
 
 // Add your filters here
 
+addFilter('push', (array, item) => {
+	array.push(item)
+	return array
+})
