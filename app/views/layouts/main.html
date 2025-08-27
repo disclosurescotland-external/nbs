@@ -1,67 +1,38 @@
-{% extends "/layouts/main.html" %}
 
 
 
-{# Specify the menu items object to show navigation #} 
-{% set navigationMenu = {
-        "menu": [
-            {
-            "label": "Dashboard",
-            "link": "#",
-            "current": true
-            },
 
-            {
-            "label": "Search and update",
-            "link": "#"
-            },
 
-            {
-            "label": "Applications",
-            "link": "#"
-            },
-            {
-            "label": "NBS",
-            "link": "#"
-            }
-        ]
-    }
-%}
+{% extends "sg-prototype-templates/layouts/_base-layout--navigation.njk" %}
 
-{% block pageTitle %}Dashboard{% endblock %}
+<!-- {% block pageTitle %}
+    {% if pageName %}{{ pageName }} - {% endif %}Disclosure Scotland {{ serviceName }}
+{% endblock %} -->
 
-{# Cookie banner to show placement location of this and notification banners #}
-{% block pageTopStart %}
-<div id="cookie-notice" class="ds_notification  ds_notification--large  ds_notification--cookie  js-initial-cookie-content" data-module="ds-cookie-notification">
-    <div class="ds_wrapper">
-        <div class="ds_notification__content">
-            <h2 class="visually-hidden">Information</h2>
 
-            <div class="ds_notification__text">
-                <p>We use <a href="#">cookies</a> to collect anonymous data to help us improve your site browsing
-                    experience.</p>
-                <p>Click 'Accept all cookies' to agree to all cookies that collect anonymous data.
-                    To only allow the cookies that make the site work, click 'Use essential cookies only.' Visit 'Set cookie preferences' to control specific cookies.</p>
-            </div>
 
-            <div class="ds_notification__actions">
-                <button class="ds_button  ds_button--small  js-accept-all-cookies">Accept all cookies</button>
-                <button class="ds_button  ds_button--small  ds_button--secondary  js-accept-essential-cookies">Use essential cookies only</button>
-                <a href="#">Set cookie preferences</a>
-            </div>
+
+
+{% block siteBrandingLogo %}
+{# Combine the site title with the branding logo as we don't have a proper service name #}
+    <a class="ds_site-branding__logo ds_site-branding__link" href="{{currentPrototype}}{{homeLink}}">
+        <img class="ds_site-branding__logo-image" src="/public/images/ds-logo.svg" alt="Disclosure Scotland" />
+        <div class="ds_site-branding__title">
+            <!-- {{ serviceName }} -->
+
+            <!-- main name -->
         </div>
-    </div>
-</div>
-{% endblock %}  
+    </a>
+    
+
+    
+{% endblock %}
 
 
-
-
-{# Use an empty siteBrandingTitle block to only show the logo for site branding #}
+{# Use an empty siteBrandingTitle block as we've moved the title into the logo #}
 {% block siteBrandingTitle %}
-<div class="ds_site-branding__title">
-    {{ serviceName }}
-</div>
+
+
 {% endblock %}
 
 
