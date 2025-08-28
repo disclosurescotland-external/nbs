@@ -5,9 +5,9 @@
 
 {% extends "sg-prototype-templates/layouts/_base-layout--navigation.njk" %}
 
-{% block pageTitle %}
+<!-- {% block pageTitle %}
     {% if pageName %}{{ pageName }} - {% endif %}Disclosure Scotland {{ serviceName }}
-{% endblock %} 
+{% endblock %} -->
 
 
 
@@ -18,9 +18,7 @@
     <a class="ds_site-branding__logo ds_site-branding__link" href="{{currentPrototype}}{{homeLink}}">
         <img class="ds_site-branding__logo-image" src="/public/images/ds-logo.svg" alt="Disclosure Scotland" />
         <div class="ds_site-branding__title">
-            <!-- {{ serviceName }}  this appears below ds image do not use-->
-
-        
+            <!-- {{ serviceName }} -->
 
             <!-- main name -->
         </div>
@@ -67,11 +65,6 @@
         </div>
     {% endif %}
 {% endblock %}
-
-
-
-
-
 
 
 {# Setup the main wrapper, use article as the default layout #}
