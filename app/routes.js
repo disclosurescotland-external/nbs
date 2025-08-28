@@ -47,13 +47,13 @@ router.get('*', function(req, res, next){
     // Add main nav items
     res.locals['siteNav'] = [
         {
+            name: "S + U"
+        },
+        {
+            name: "CLA"
+        },
+        {
             name: "Applications"
-        },
-        {
-            name: "PVG scheme membership"
-        },
-        {
-            name: "Personal details"
         },
         {
             name: "Help"
@@ -85,7 +85,7 @@ router.post('*', function(req, res, next){
 
 // Go back to the changelog page on home link
 router.get('/', function(req, res, next){
-    res.redirect('/applicant/appealable-convictions/')
+    res.redirect('/manage-prototype')
 })
 
 router.post('/applications/information', function (req, res) {
