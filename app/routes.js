@@ -56,10 +56,10 @@ router.get('*', function(req, res, next){
             name: "Applications"
         },
         {
-            name: "ITSM"
+            name: "OM ORI"
         },
         {
-            name: "OM"
+            name: "Consider List Appeal"
         }
     ]
 

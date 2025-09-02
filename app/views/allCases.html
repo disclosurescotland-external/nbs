@@ -1,0 +1,192 @@
+{% extends "sg-prototype-templates/layouts/_base-layout--navigation.njk" %}
+
+{% extends "layouts/main" %}
+
+{# Specify the menu items object to show navigation #} 
+{% set navigationMenu = {
+        "menu": [
+            {
+            "label": "Menu item 1",
+            "link": "#",
+            "current": true
+            },
+            {
+            "label": "Menu item 2",
+            "link": "#"
+            },
+            {
+            "label": "Menu item 3",
+            "link": "#"
+            },
+            {
+            "label": "Menu item 4",
+            "link": "#"
+            }
+        ]
+    }
+%}
+
+{% block pageTitle %}Case Management{% endblock %}
+
+{# Cookie banner to show placement location of this and notification banners #}
+{% block pageTopStart %}
+<div id="cookie-notice" class="ds_notification  ds_notification--large  ds_notification--cookie  js-initial-cookie-content" data-module="ds-cookie-notification">
+    <div class="ds_wrapper">
+        <div class="ds_notification__content">
+            <h2 class="visually-hidden">Information</h2>
+
+            <div class="ds_notification__text">
+                <p>We use <a href="#">cookies</a> to collect anonymous data to help us improve your site browsing
+                    experience.</p>
+                <p>Click 'Accept all cookies' to agree to all cookies that collect anonymous data.
+                    To only allow the cookies that make the site work, click 'Use essential cookies only.' Visit 'Set cookie preferences' to control specific cookies.</p>
+            </div>
+
+            <div class="ds_notification__actions">
+                <button class="ds_button  ds_button--small  js-accept-all-cookies">Accept all cookies</button>
+                <button class="ds_button  ds_button--small  ds_button--secondary  js-accept-essential-cookies">Use essential cookies only</button>
+                <a href="#">Set cookie preferences</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{# Use an empty siteBrandingTitle block to only show the logo for site branding #}
+{% block siteBrandingTitle %}
+<div class="ds_site-branding__logo-image">
+    {{ serviceName }}
+</div>
+{% endblock %}
+
+
+
+
+
+<!--   ------------------------all above is for all places - make a layout later------------------------------------ -->
+   
+{% block main %}
+
+<!-- side navigation -->
+
+<nav aria-label="Sections" class="ds_side-navigation" data-module="ds-side-navigation">
+    <input type="checkbox" class="fully-hidden  js-toggle-side-navigation" id="show-side-navigation" aria-controls="side-navigation-root">
+    <label class="ds_side-navigation__expand  ds_link" for="show-side-navigation"><span class="visually-hidden">Show all</span> Pages in this section <span class="ds_side-navigation__expand-indicator"></span></label>
+
+    <ul class="ds_side-navigation__list" id="side-navigation-root">
+        <li class="ds_side-navigation__item  ds_side-navigation__item--has-children  ds_side-navigation__item--has-children--expanded">
+            <a href="#" class="ds_side-navigation__link">Apples</a>
+            <ul class="ds_side-navigation__list">
+                <li class="ds_side-navigation__item  ds_side-navigation__item--has-children">
+                    <a href="#" class="ds_side-navigation__link">Green apples</a>
+                    <ul class="ds_side-navigation__list">
+                        <li class="ds_side-navigation__item">
+                            <a href="#" class="ds_side-navigation__link  ds_current" aria-current="page">Bramley</a>
+                        </li>
+                        <li class="ds_side-navigation__item">
+                            <a href="#" class="ds_side-navigation__link">Granny Smith</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="ds_side-navigation__item  ds_side-navigation__item--has-children">
+                    <a href="#" class="ds_side-navigation__link">Red apples</a>
+                </li>
+            </ul>
+        </li>
+        <li class="ds_side-navigation__item">
+            <a href="#" class="ds_side-navigation__link">Bananas</a>
+        </li>
+        <li class="ds_side-navigation__item">
+            <a href="#" class="ds_side-navigation__link">Cherries</a>
+        </li>
+        <li class="ds_side-navigation__item">
+            <a href="#" class="ds_side-navigation__link">Dates</a>
+        </li>
+    </ul>
+</nav>
+
+
+<table class="ds_table">
+    <caption>Public holidays in 2020</caption>
+
+    <thead>
+        <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Day</th>
+            <th scope="col">Holiday</th>
+            <th scope="col">Date</th>
+            <th scope="col">Day</th>
+            <th scope="col">Holiday</th>
+            <th scope="col">Day</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>10 April</td>
+            <td>Friday</td>
+            <td>Good Friday</td>
+        </tr>
+        <tr>
+            <td>8 May</td>
+            <td>Friday</td>
+            <td>Early May Bank Holiday</td>
+        </tr>
+        <tr>
+            <td>25 May</td>
+            <td>Monday</td>
+            <td>Spring Bank Holiday</td>
+        </tr>
+        <tr>
+            <td>3 August</td>
+            <td>Monday</td>
+            <td>Summer Bank Holiday</td>
+        </tr>
+        <tr>
+            <td>10 April</td>
+            <td>Friday</td>
+            <td>Good Friday</td>
+        </tr>
+        <tr>
+            <td>8 May</td>
+            <td>Friday</td>
+            <td>Early May Bank Holiday</td>
+        </tr>
+        <tr>
+            <td>25 May</td>
+            <td>Monday</td>
+            <td>Spring Bank Holiday</td>
+        </tr>
+        <tr>
+            <td>3 August</td>
+            <td>Monday</td>
+            <td>Summer Bank Holiday</td>
+        </tr>
+        <tr>
+            <td>3 August</td>
+            <td>Monday</td>
+            <td>Summer Bank Holiday</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- table contianing  details component for filters and another 9 column table -->
+
+<details class="ds_details">  <!-- How do I make this go to the right of the  side navigation? -->
+    <summary class="ds_details__summary">
+        I cannot sign in
+    </summary>
+    <div class="ds_details__text">
+        <p>Contact the design system team if you cannot sign in.</p>
+
+        <p>Email <a href="mailto:designsystem@gov.scot">designsystem@gov.scot</a>.</p>
+        <p>Or phone 0000 123 4567<br>
+            Monday to Friday, 9am to 5pm</p>
+    </div>
+</details>
+
+<!-- pagination element -->
+
+
+
+{% endblock %}

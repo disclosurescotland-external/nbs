@@ -1,0 +1,143 @@
+{% extends "sg-prototype-templates/layouts/_base-layout--navigation.njk" %}
+
+{% extends "layouts/main" %}
+
+{# Specify the menu items object to show navigation #} 
+{% set navigationMenu = {
+        "menu": [
+            {
+            "label": "Menu item 1",
+            "link": "#",
+            "current": true
+            },
+            {
+            "label": "Menu item 2",
+            "link": "#"
+            },
+            {
+            "label": "Menu item 3",
+            "link": "#"
+            },
+            {
+            "label": "Menu item 4",
+            "link": "#"
+            }
+        ]
+    }
+%}
+
+{% block pageTitle %}Case Management{% endblock %}
+
+{# Cookie banner to show placement location of this and notification banners #}
+{% block pageTopStart %}
+<div id="cookie-notice" class="ds_notification  ds_notification--large  ds_notification--cookie  js-initial-cookie-content" data-module="ds-cookie-notification">
+    <div class="ds_wrapper">
+        <div class="ds_notification__content">
+            <h2 class="visually-hidden">Information</h2>
+
+            <div class="ds_notification__text">
+                <p>We use <a href="#">cookies</a> to collect anonymous data to help us improve your site browsing
+                    experience.</p>
+                <p>Click 'Accept all cookies' to agree to all cookies that collect anonymous data.
+                    To only allow the cookies that make the site work, click 'Use essential cookies only.' Visit 'Set cookie preferences' to control specific cookies.</p>
+            </div>
+
+            <div class="ds_notification__actions">
+                <button class="ds_button  ds_button--small  js-accept-all-cookies">Accept all cookies</button>
+                <button class="ds_button  ds_button--small  ds_button--secondary  js-accept-essential-cookies">Use essential cookies only</button>
+                <a href="#">Set cookie preferences</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{# Use an empty siteBrandingTitle block to only show the logo for site branding #}
+{% block siteBrandingTitle %}
+<div class="ds_site-branding__logo-image">
+    {{ serviceName }}
+</div>
+{% endblock %}
+
+{% block main %}
+<main id="main-content">
+
+    <div class="category-upper">
+
+
+        <div class="ds_wrapper">
+            <header class="ds_feature-header  ds_feature-header--wide">
+                <div class="ds_feature-header__primary">
+                    <h1 class="ds_feature-header__title">Welcome Kath</h1>
+                    <!-- <p>A short summary pagagraph.</p> -->
+                </div>
+
+            </header>
+        </div>
+    </div>
+
+    <div class="category-lower  ds_pre-footer-background">
+        <div class="ds_wrapper">
+
+            <div class="ds_layout  ds_layout--category-list">
+                <div class="ds_layout__grid">
+
+                    <div class="ds_category-list-container">
+                    <nav aria-label="Category navigation">
+                        <ul class="ds_category-list ds_category-list--grid ds_category-list--narrow">
+                            <li class="ds_card  ds_card--hover">
+                                <div class="ds_card__content">
+                                    <h2 class="ds_card__title">
+                                        <a class="ds_card__link--cover" href="#">Search and update</a>
+                                    </h2>
+                                    <p>You can search for and update records</p>
+                                </div>
+                            </li>
+                            <li class="ds_card  ds_card--hover">
+                                <div class="ds_card__content">
+                                    <h2 class="ds_card__title">
+                                        <a class="ds_card__link--cover" href="#">Applications</a>
+                                    </h2>
+                                    <p>Application processing</p>
+                                </div>
+                            </li>
+                            <li class="ds_card  ds_card--hover">
+                                <div class="ds_card__content">
+                                    <h2 class="ds_card__title">
+                                        <a class="ds_card__link--cover" href="#">OM ORI</a>
+                                    </h2>
+                                    <p>You can review ORI submitted by Police Scotland</p>
+                                </div>
+                            </li>
+                            <li class="ds_card  ds_card--hover">
+                                <div class="ds_card__content">
+                                    <h2 class="ds_card__title">
+                                        <a class="ds_card__link--cover" href="#">Consider, List, Appeal</a>
+                                    </h2>
+                                    <p>Find advice and support to help your business become more environmentally aware and efficient</p>
+                                </div>
+                            </li>
+                            <li class="ds_card  ds_card--hover">
+                                <div class="ds_card__content">
+                                    <h2 class="ds_card__title">
+                                        <a class="ds_card__link--cover" href="#">Marine and fisheries</a>
+                                    </h2>
+                                    <p>Includes information on safety at sea and managing crew</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}
+
+
+
+<!--   ------------------------all above is for all places - make a layout later------------------------------------ -->
