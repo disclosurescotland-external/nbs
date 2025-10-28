@@ -73,7 +73,7 @@
 {% block main %}
     <div class="ds_wrapper {{ containerClasses }}">
         {% block beforeContent %}{% endblock %}
-        <main class="ds_layout {{ mainClasses | default('ds_layout--article') }}" id="main-content" role="main" {% if mainLang %} lang="{{ mainLang }}" {% endif %}>
+        <main class="ds_layout {{ mainClasses | default('ds_layout--article   ') }}" id="main-content" role="main" {% if mainLang %} lang="{{ mainLang }}" {% endif %}>
             {% block content %}{% endblock %}
         </main>
     </div>
