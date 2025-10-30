@@ -1,0 +1,412 @@
+{# !!!! The Check your answers page pattern is currently being reviewed and is subject to change !!!! #}
+
+{% extends "sg-prototype-templates/layouts/_base-layout.njk" %}
+{% extends "layouts/main" %}
+
+{% block pageTitle %}Check your answers{% endblock %}
+
+{# Use an empty siteSearch block to hide the search from the header #}
+{% block siteSearch %}{% endblock %}
+
+{% block main %}
+<div class="ds_wrapper">
+    <a class="ds_back-link" href="#">Back to 'Name of service'</a>
+
+    
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <p>govuk-grid-column-full govuk-grid-column-fullgovuk-grid-column-fullgovuk-grid-column-fullgovuk-grid-column-fullgovuk-grid-column-fullgovuk-grid-column-full</p>
+            <h1>Case number: 123456</h1>
+
+          <div class="ds_inset-text">
+            <div class="ds_inset-text__text">
+                <div class="ds_tag ds_tag--red">
+                    Action needed
+                </div>
+                <p><a href="#">Initial consideration section requires first recomendation</a> govuk-grid-column-fullgovuk-grid-column-fullgovuk-grid-column-fullgovuk-grid-column-fullgovuk-grid-column-fullgovuk-grid-column-fullgovuk-grid-column-fullgovuk-grid-column-fullgovuk-grid-column-fullgovuk-grid-column-fullgovuk-grid-column-fullgovuk-grid-column-fullgovuk-grid-column-fullgovuk-grid-column-fullgovuk-grid-column-fullgovuk-grid-column-fullgovuk-grid-column-fullgovuk-grid-column-full</p>
+            </div>
+          </div>
+
+     <main id="main-content">
+
+        {% block mainHeader %}
+        <!-- <div class="ds_layout__header">
+            <header class="ds_page-header">
+                <h1 class="ds_page-header__title">Case number VC1234567</h1>
+            </header>
+        </div> -->
+
+        
+        {% endblock %}
+
+       
+
+
+
+        {% block mainContent %}
+        <div class="govuk-grid-row">
+        
+            <div class="govuk-grid-column-one-half ">
+
+                <h2>Case Details</h2>
+    
+                <ul class="ds_summary-list">
+                    <li class="ds_summary-list__item">
+                        <span class="ds_summary-list__key" id="item-application1-key">Risk</span>
+                        <span class="ds_summary-list__value">
+                            <q class="ds_summary-list__answer">Status tag</q>
+                        </span>
+                        <!-- <div class="ds_summary-list__actions">
+                            <button type="button" class="ds_link" aria-describedby="item-application1-key">
+                                Change
+                            </button>
+                        </div> -->
+                    </li>
+                    <li class="ds_summary-list__item">
+                        <span class="ds_summary-list__key" id="item-application2-key">Stage</span>
+                        <span class="ds_summary-list__value">
+                            <q class="ds_summary-list__answer">Awaiting first recomendation</q>
+                        </span>
+                        <!-- <div class="ds_summary-list__actions">
+                            <button type="button" class="ds_link" aria-describedby="item-application2-key">
+                                Change
+                            </button>
+                        </div> -->
+                    </li>
+
+                    <li class="ds_summary-list__item">
+                        <span class="ds_summary-list__key" id="item-application2-key">Working with</span>
+                        <span class="ds_summary-list__value">
+                            <q class="ds_summary-list__answer">[Workforce]</q>
+                        </span>
+                        <!-- <div class="ds_summary-list__actions">
+                            <button type="button" class="ds_link" aria-describedby="item-application2-key">
+                                Change
+                            </button>
+                        </div> -->
+                    </li>
+
+
+
+                    <li class="ds_summary-list__item">
+                        <span class="ds_summary-list__key" id="item-application2-key">ok to consider for both</span>
+                        <span class="ds_summary-list__value">
+                            <q class="ds_summary-list__answer">[Yes] or No</q>
+                        </span>
+                        <!-- <div class="ds_summary-list__actions">
+                            <button type="button" class="ds_link" aria-describedby="item-application2-key">
+                                Change
+                            </button>
+                        </div> -->
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+        
+        <div class="ds_layout--article"> <!--changed from --content to make full screen width  !!!!  still responsive-->
+            <div class="ds_tabs" data-module="ds-tabs">
+        <nav class="ds_tabs__navigation" aria-labelledby="ds_tabs__title">
+        <h2 id="ds_tabs__title" class="ds_tabs__title">Contents</h2>
+        <ul class="ds_tabs__list" id="tablist">
+            <li class="ds_tabs__tab">
+                <a class="ds_tabs__tab-link" href="#tab1">Initial consideration</a>
+            </li>
+            <li class="ds_tabs__tab">
+                <a class="ds_tabs__tab-link" href="#tab2">Personal details</a>
+            </li>
+            <li class="ds_tabs__tab">
+                <a class="ds_tabs__tab-link" href="#tab3">Vetting</a>
+            </li>
+            <li class="ds_tabs__tab">
+                <a class="ds_tabs__tab-link" href="#tab4">Documents</a>
+            </li>
+
+        </ul>
+        </nav>
+        <div class="ds_tabs__content  ds_tabs__content--bordered" id="tab1">
+        <h2>Recommendations</h2>
+        <label class="ds_label" for="1st">1st recommendation</label>
+        <textarea class="ds_input" rows="3" id="1st" name="1st"></textarea>
+
+
+
+
+        </div>
+
+        <div class="ds_tabs__content  ds_tabs__content--bordered" id="tab2">
+       
+                  
+                  
+                        <h2>Personal details</h2>
+    
+                        <ul class="ds_summary-list">
+                            <li class="ds_summary-list__item">
+                                <span class="ds_summary-list__key" id="item-personal1-key">Name</span>
+                                <span class="ds_summary-list__value">
+                                    <q class="ds_summary-list__answer">Jane Smith</q>
+                                </span>
+                                <div class="ds_summary-list__actions">
+                                    <button type="button" class="ds_link" aria-describedby="item-personal1-key">
+                                        Change
+                                    </button>
+                                </div>
+                            </li>
+                            <li class="ds_summary-list__item">
+                                <span class="ds_summary-list__key" id="item-personal2-key">Date of birth</span>
+                                <span class="ds_summary-list__value">
+                                    <q class="ds_summary-list__answer">19 March 1983</q>
+                                </span>
+                                <div class="ds_summary-list__actions">
+                                    <button type="button" class="ds_link" aria-describedby="item-personal2-key">
+                                        Change
+                                    </button>
+                                </div>
+                            </li>
+                            <li class="ds_summary-list__item">
+                                <span class="ds_summary-list__key" id="item-personal3-key">Customer reference</span>
+                                <span class="ds_summary-list__value">
+                                    <q class="ds_summary-list__answer">Not provided</q>
+                                </span>
+                                <div class="ds_summary-list__actions">
+                                    <button type="button" class="ds_link" aria-describedby="item-personal3-key">
+                                        Change
+                                    </button>
+                                </div>
+                            </li>
+                            <li class="ds_summary-list__item">
+                                <span class="ds_summary-list__key" id="item-personal4-key">Address</span>
+                                <span class="ds_summary-list__value">
+                                    <q class="ds_summary-list__answer">Victoria Quay<br>Edinburgh<br>EH6 6QQ</q>
+                                </span>
+                                <div class="ds_summary-list__actions">
+                                    <button type="button" class="ds_link" aria-describedby="item-personal4-key">
+                                        Change
+                                    </button>
+                                </div>
+                            </li>
+                            <li class="ds_summary-list__item">
+                                <span class="ds_summary-list__key" id="item-personal5-key">Contact details</span>
+                                <span class="ds_summary-list__value">
+                                    <q class="ds_summary-list__answer">
+                                        <ul class="ds_no-bullets">
+                                            <li><q class="ds_summary-list__answer">07890 135468</q></li>
+                                            <li><q class="ds_summary-list__answer">jane.smith@example.com</q></li>
+                                        </ul>
+                                    </q>
+                                </span>
+                                <div class="ds_summary-list__actions">
+                                    <button type="button" class="ds_link" aria-describedby="item-personal5-key">
+                                        Change
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <h2>Case Details</h2>
+    
+                        <ul class="ds_summary-list">
+                            <li class="ds_summary-list__item">
+                                <span class="ds_summary-list__key" id="item-application1-key">Previous application number</span>
+                                <span class="ds_summary-list__value">
+                                    <q class="ds_summary-list__answer">12345678</q>
+                                </span>
+                                <div class="ds_summary-list__actions">
+                                    <button type="button" class="ds_link" aria-describedby="item-application1-key">
+                                        Change
+                                    </button>
+                                </div>
+                            </li>
+                            <li class="ds_summary-list__item">
+                                <span class="ds_summary-list__key" id="item-application2-key">Licence type</span>
+                                <span class="ds_summary-list__value">
+                                    <q class="ds_summary-list__answer">For personal use</q>
+                                </span>
+                                <div class="ds_summary-list__actions">
+                                    <button type="button" class="ds_link" aria-describedby="item-application2-key">
+                                        Change
+                                    </button>
+                                </div>
+                            </li>
+                            <li class="ds_summary-list__item">
+                                <span class="ds_summary-list__key" id="item-application3-key">Home address</span>
+                                <span class="ds_summary-list__value">
+                                    <q class="ds_summary-list__answer">Victoria Quay<br>Edinburgh<br>EH6 6QQ</q>
+                                </span>
+                                <div class="ds_summary-list__actions">
+                                    <button type="button" class="ds_link" aria-describedby="item-application3-key">
+                                        Change
+                                    </button>
+                                </div>
+                            </li>
+                            <li class="ds_summary-list__item">
+                                <span class="ds_summary-list__key" id="item-application4-key">Licence period</span>
+                                <span class="ds_summary-list__value">
+                                    <q class="ds_summary-list__answer">Valid for 6 months</q>
+                                </span>
+                                <div class="ds_summary-list__actions">
+                                    <button type="button" class="ds_link" aria-describedby="item-application4-key">
+                                        Change
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                    
+    
+         
+            </div>
+
+
+
+
+
+
+
+            <div class="ds_tabs__content  ds_tabs__content--bordered" id="tab3">
+                
+                <h2>Vetting as per Application refereal tab</h2>
+                <p><a href="#">Zip all docs</a></p>
+             
+                </div>
+
+        <div class="ds_tabs__content  ds_tabs__content--bordered" id="tab4">
+            <h2>Documents for VC123456</h2>
+       
+        </div>
+
+
+     
+
+
+            <!-- <h2>Personal details</h2>
+                <ul class="ds_summary-list">
+                    <li class="ds_summary-list__item">
+                        <span class="ds_summary-list__key" id="item-personal1-key">Name</span>
+                        <span class="ds_summary-list__value">
+                            <q class="ds_summary-list__answer">Jane Smith</q>
+                        </span>
+                        <div class="ds_summary-list__actions">
+                            <button type="button" class="ds_link" aria-describedby="item-personal1-key">
+                                Change
+                            </button>
+                        </div>
+                    </li>
+                    <li class="ds_summary-list__item">
+                        <span class="ds_summary-list__key" id="item-personal2-key">Date of birth</span>
+                        <span class="ds_summary-list__value">
+                            <q class="ds_summary-list__answer">19 March 1983</q>
+                        </span>
+                        <div class="ds_summary-list__actions">
+                            <button type="button" class="ds_link" aria-describedby="item-personal2-key">
+                                Change
+                            </button>
+                        </div>
+                    </li>
+                    <li class="ds_summary-list__item">
+                        <span class="ds_summary-list__key" id="item-personal3-key">Customer reference</span>
+                        <span class="ds_summary-list__value">
+                            <q class="ds_summary-list__answer">Not provided</q>
+                        </span>
+                        <div class="ds_summary-list__actions">
+                            <button type="button" class="ds_link" aria-describedby="item-personal3-key">
+                                Change
+                            </button>
+                        </div>
+                    </li>
+                    <li class="ds_summary-list__item">
+                        <span class="ds_summary-list__key" id="item-personal4-key">Address</span>
+                        <span class="ds_summary-list__value">
+                            <q class="ds_summary-list__answer">Victoria Quay<br>Edinburgh<br>EH6 6QQ</q>
+                        </span>
+                        <div class="ds_summary-list__actions">
+                            <button type="button" class="ds_link" aria-describedby="item-personal4-key">
+                                Change
+                            </button>
+                        </div>
+                    </li>
+                    <li class="ds_summary-list__item">
+                        <span class="ds_summary-list__key" id="item-personal5-key">Contact details</span>
+                        <span class="ds_summary-list__value">
+                            <q class="ds_summary-list__answer">
+                                <ul class="ds_no-bullets">
+                                    <li><q class="ds_summary-list__answer">07890 135468</q></li>
+                                    <li><q class="ds_summary-list__answer">jane.smith@example.com</q></li>
+                                </ul>
+                            </q>
+                        </span>
+                        <div class="ds_summary-list__actions">
+                            <button type="button" class="ds_link" aria-describedby="item-personal5-key">
+                                Change
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+                <h2>Application details</h2>
+
+                <ul class="ds_summary-list">
+                    <li class="ds_summary-list__item">
+                        <span class="ds_summary-list__key" id="item-application1-key">Previous application number</span>
+                        <span class="ds_summary-list__value">
+                            <q class="ds_summary-list__answer">12345678</q>
+                        </span>
+                        <div class="ds_summary-list__actions">
+                            <button type="button" class="ds_link" aria-describedby="item-application1-key">
+                                Change
+                            </button>
+                        </div>
+                    </li>
+                    <li class="ds_summary-list__item">
+                        <span class="ds_summary-list__key" id="item-application2-key">Licence type</span>
+                        <span class="ds_summary-list__value">
+                            <q class="ds_summary-list__answer">For personal use</q>
+                        </span>
+                        <div class="ds_summary-list__actions">
+                            <button type="button" class="ds_link" aria-describedby="item-application2-key">
+                                Change
+                            </button>
+                        </div>
+                    </li>
+                    <li class="ds_summary-list__item">
+                        <span class="ds_summary-list__key" id="item-application3-key">Home address</span>
+                        <span class="ds_summary-list__value">
+                            <q class="ds_summary-list__answer">Victoria Quay<br>Edinburgh<br>EH6 6QQ</q>
+                        </span>
+                        <div class="ds_summary-list__actions">
+                            <button type="button" class="ds_link" aria-describedby="item-application3-key">
+                                Change
+                            </button>
+                        </div>
+                    </li>
+                    <li class="ds_summary-list__item">
+                        <span class="ds_summary-list__key" id="item-application4-key">Licence period</span>
+                        <span class="ds_summary-list__value">
+                            <q class="ds_summary-list__answer">Valid for 6 months</q>
+                        </span>
+                        <div class="ds_summary-list__actions">
+                            <button type="button" class="ds_link" aria-describedby="item-application4-key">
+                                Change
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+                <h2>Now send your application</h2>
+                <p>By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p> -->
+
+                <form action="/confirmation" method="post" novalidate>
+                    <div class="ds_button-group">
+                        <a href="/path/of/prev/page" class="ds_button ds_button--secondary">Back</a>
+                        <button class="ds_button" type="submit">Accept and send</button>
+                    </div>
+                </form>
+            </div>
+        {% endblock %}
+
+     </main>
+
+
+    </div>
+</div>
+</div>
+{% endblock %}
